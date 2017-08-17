@@ -3016,8 +3016,15 @@ $(INTERNAL_OTA_PACKAGE_TARGET): $(BUILT_TARGET_FILES_PACKAGE) \
 	   $(if $(OEM_OTA_CONFIG), -o $(OEM_OTA_CONFIG)) \
 	   $(BUILT_TARGET_FILES_PACKAGE) $@
 
-.PHONY: otapackage
+SACRED_TARGET_PACKAGE := $(PRODUCT_OUT)/SacredOS-$(SACRED_VERSION)-$(TARGET_DEVICE)-$(shell date -u +%Y%m%d-%H%M)-$(SACRED_BUILD_TYPE).zip
+
+.PHONY: otapackage sacred
 otapackage: $(INTERNAL_OTA_PACKAGE_TARGET)
+sacred: otapackage
+	$(hide) ln -f $(INTERNAL_OTA_PACKAGE_TARGET) $(SACRED_TARGET_PACKAGE)
+	$(hide) $(MD5SUM) $(SACRED_TARGET_PACKAGE) | sed "s|$(PRODUCT_OUT)/||" > $(SACRED_TARGET_PACKAGE).md5sum
+	@echo "Package Complete: $(SACRED_TARGET_PACKAGE)" >&2
+	@echo "Size: `du -sh $(SACRED_TARGET_PACKAGE) | awk '{print $1}' `" >&2
 
 endif    # build_ota_package
 
