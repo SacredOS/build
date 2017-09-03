@@ -19,8 +19,7 @@ print_build_config_vars := \
   HOST_CROSS_2ND_ARCH \
   HOST_BUILD_TYPE \
   BUILD_ID \
-  OUT_DIR \
-  AUX_OS_VARIANT_LIST
+  OUT_DIR
 
 ifeq ($(SDCLANG),true)
 print_build_config_vars += \
