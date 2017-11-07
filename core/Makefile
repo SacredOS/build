@@ -3023,7 +3023,7 @@ SACRED_TARGET_PACKAGE := $(PRODUCT_OUT)/SacredOS-$(SACRED_VERSION)-$(TARGET_DEVI
 .PHONY: otapackage sacred
 otapackage: $(INTERNAL_OTA_PACKAGE_TARGET)
 sacred: otapackage
-	$(hide) ln -f $(INTERNAL_OTA_PACKAGE_TARGET) $(SACRED_TARGET_PACKAGE)
+	$(hide) mv $(INTERNAL_OTA_PACKAGE_TARGET) $(SACRED_TARGET_PACKAGE)
 	$(hide) $(MD5SUM) $(SACRED_TARGET_PACKAGE) | sed "s|$(PRODUCT_OUT)/||" > $(SACRED_TARGET_PACKAGE).md5sum
 	@echo "Package Complete: $(SACRED_TARGET_PACKAGE)" >&2
 	@echo "Size: `du -sh $(SACRED_TARGET_PACKAGE) | awk '{print $1}' `" >&2
