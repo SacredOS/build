@@ -2756,7 +2756,7 @@ TARGET_PACKAGE := $(PRODUCT_OUT)/SacredOS-$(SACRED_VERSION)-$(TARGET_DEVICE)-$(s
 otapackage: $(INTERNAL_OTA_PACKAGE_TARGET)
 bacon: sacred
 sacred: otapackage
-	$(hide) ln -f $(INTERNAL_OTA_PACKAGE_TARGET) $(TARGET_PACKAGE)
+	$(hide) mv $(INTERNAL_OTA_PACKAGE_TARGET) $(TARGET_PACKAGE)
 	$(hide) $(MD5SUM) $(TARGET_PACKAGE) > $(TARGET_PACKAGE).md5sum
 	@echo -e ${CL_BLD}${CL_RED}"===============================-Package complete-==============================="${CL_RED}
 	@echo -e ${CL_BLD}${CL_YLW}"Zip: "${CL_YLW} $(TARGET_PACKAGE)${CL_RST}
