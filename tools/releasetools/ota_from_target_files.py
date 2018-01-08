@@ -482,20 +482,13 @@ else if get_stage("%(bcb_dev)s") == "3/3" then
 
   #Print ASCII
   script.Print("**************************************************");
-  script.Print("**              .--.                            **");
-  script.Print("**             : .; :                           **");
-  script.Print("**             :    : .--.  .--. .---.          **");
-  script.Print("**             : :: :' .; :`._-.': .; `         **");
-  script.Print("**             :_;:_;`.__.'`.__.': ._.'         **");
-  script.Print("**                               : :            **");
-  script.Print("**                               :_;            **");
-  script.Print("** .--.        .-.               .-.         .-.**");
-  script.Print("**: .--'      .' `.              : :         : :**");
-  script.Print("**: `;  .-.,-.`. .'.--. ,-.,-. .-' : .--.  .-' :**");
-  script.Print("**: :__ `.  .' : :' '_.': ,. :' .; :' '_.'' .; :**");
-  script.Print("**`.__.':_,._; :_;`.__.':_;:_;`.__.'`.__.'`.__.'**");
+  script.Print("**    __                         _   ___  __    **");   
+  script.Print("**   / _\ __ _  ___ _ __ ___  __| | /___\/ _\   **");
+  script.Print("**   \ \ / _` |/ __| '__/ _ \/ _` |//  //\ \    **");
+  script.Print("**   _\ \ (_| | (__| | |  __/ (_| / \_// _\ \   **");
+  script.Print("**   \__/\__,_|\___|_|  \___|\__,_\___/  \__/   **");
   script.Print("**************************************************");
-  script.Print("*                By:-ishubhamsingh               *");
+  script.Print("*                By:GeneticEnginer               *");
   script.Print("**************************************************");
   script.Print(" ")
   script.AppendExtra("sleep (2);")
@@ -516,13 +509,13 @@ else if get_stage("%(bcb_dev)s") == "3/3" then
 
   system_progress = 0.75
 
-  if GetBuildProp("ro.extended.display.version", OPTIONS.info_dict) is not None:
-    buildid = GetBuildProp("ro.extended.display.version", OPTIONS.info_dict)
+  if GetBuildProp("ro.sacred.display.version", OPTIONS.info_dict) is not None:
+    buildid = GetBuildProp("ro.sacred.display.version", OPTIONS.info_dict)
     buildidn = GetBuildProp("ro.build.id", OPTIONS.info_dict)
     buildday = GetBuildProp("ro.build.date", OPTIONS.info_dict)
     securep = GetBuildProp("ro.build.version.security_patch", OPTIONS.info_dict)
     density = GetBuildProp("ro.sf.lcd_density", OPTIONS.info_dict,False)
-    device = GetBuildProp("ro.aex.device", OPTIONS.info_dict)
+    device = GetBuildProp("ro.sacred.device", OPTIONS.info_dict)
     androidver = GetBuildProp("ro.build.version.release", OPTIONS.info_dict)
     manufacturer = GetBuildProp("ro.product.manufacturer", OPTIONS.info_dict)
     sdkver = GetBuildProp("ro.build.version.sdk", OPTIONS.info_dict)

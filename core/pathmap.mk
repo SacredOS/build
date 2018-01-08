@@ -94,5 +94,5 @@ FRAMEWORKS_BASE_JAVA_SRC_DIRS := \
 	$(addprefix frameworks/base/,$(FRAMEWORKS_BASE_SUBDIRS))
 
 ifneq ($(CUSTOM_BUILD),)
--include $(TOPDIR)vendor/aosp/build/core/pathmap.mk
+-include $(TOPDIR)vendor/sacred/build/core/pathmap.mk
 endif

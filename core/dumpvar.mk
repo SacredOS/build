@@ -3,7 +3,7 @@
 print_build_config_vars := \
   PLATFORM_VERSION_CODENAME \
   PLATFORM_VERSION \
-  EXTENDED_MOD_VERSION \
+  SACRED_VERSION \
   TARGET_PRODUCT \
   TARGET_BUILD_VARIANT \
   TARGET_PLATFORM_VERSION \
@@ -104,7 +104,7 @@ report_config_sh += echo '           ▒   ▒▒ ░ ░ ░  ░░░   ░�
 report_config_sh += echo '           ░   ▒      ░    ░    ░           ';
 report_config_sh += echo '               ░  ░   ░  ░ ░    ░           ';
 report_config_sh += echo '                                            ';
-report_config_sh += echo '        AospExtended-$(EXTENDED_VERSION) $(PLATFORM_VERSION) $(TARGET_PLATFORM_VERSION) ';
+report_config_sh += echo '        AospExtended-$(SACRED_VERSION) $(PLATFORM_VERSION) $(TARGET_PLATFORM_VERSION) ';
 report_config_sh += echo '============================================';
 report_config_sh += $(foreach v,$(print_build_config_vars),echo '$v=$($(v))';)
 report_config_sh += echo '============================================';
