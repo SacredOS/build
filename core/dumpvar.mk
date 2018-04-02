@@ -92,22 +92,19 @@ endif
 
 ifneq ($(filter report_config,$(DUMP_MANY_VARS)),)
 # Construct the shell commands that print the config banner.
-report_config_sh := echo '============================================';
-report_config_sh += echo '                                            ';
-report_config_sh += echo '          ▄▄▄      ▓█████ ▒██   ██▒         ';
-report_config_sh += echo '         ▒████▄    ▓█   ▀ ▒▒ █ █ ▒░         ';
-report_config_sh += echo '         ▒██  ▀█▄  ▒███   ░░  █   ░         ';
-report_config_sh += echo '         ░██▄▄▄▄██ ▒▓█  ▄  ░ █ █ ▒          ';
-report_config_sh += echo '          ▓█   ▓██▒░▒████▒▒██▒ ▒██▒         ';
-report_config_sh += echo '          ▒▒   ▓▒█░░░ ▒░ ░▒▒ ░ ░▓ ░         ';
-report_config_sh += echo '           ▒   ▒▒ ░ ░ ░  ░░░   ░▒ ░         ';
-report_config_sh += echo '           ░   ▒      ░    ░    ░           ';
-report_config_sh += echo '               ░  ░   ░  ░ ░    ░           ';
-report_config_sh += echo '                                            ';
-report_config_sh += echo '        AospExtended-$(SACRED_VERSION) $(PLATFORM_VERSION) $(TARGET_PLATFORM_VERSION) ';
-report_config_sh += echo '============================================';
+report_config_sh := echo '====================================================================================';
+report_config_sh += echo '      .:: ::                                         .::    .::::       .:: ::      ';
+report_config_sh += echo '    .::    .::                                       .::  .::    .::  .::    .::    ';
+report_config_sh += echo '     .::         .::       .:::.: .:::   .::         .::.::        .:: .::          ';
+report_config_sh += echo '       .::     .::  .::  .::    .::    .:   .::  .:: .::.::        .::   .::        ';
+report_config_sh += echo '          .:: .::   .:: .::     .::   .::::: .::.:   .::.::        .::      .::     ';
+report_config_sh += echo '    .::    .::.::   .::  .::    .::   .:        .:   .::  .::     .:: .::    .::    ';
+report_config_sh += echo '      .:: ::    .:: .:::   .:::.:::     .::::    .:: .::    .::::       .:: ::      ';
+report_config_sh += echo '                                                                                    ';
+report_config_sh += echo '    SacredOS-$(SACRED_VERSION) $(PLATFORM_VERSION) $(TARGET_PLATFORM_VERSION)       ';
+report_config_sh += echo '====================================================================================';
 report_config_sh += $(foreach v,$(print_build_config_vars),echo '$v=$($(v))';)
-report_config_sh += echo '============================================';
+report_config_sh += echo '====================================================================================';
 endif
 
 # Dump mulitple variables to "<var>=<value>" pairs, one per line.
